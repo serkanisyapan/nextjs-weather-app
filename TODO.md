@@ -1,6 +1,6 @@
 - [x] Generate Nextjs + Typescript app
-- [ ] Setup eslint for react + prettier
-- [ ] Setup tailwind
+- [x] Setup eslint + airbnb config + prettier
+- [x] Setup tailwind
 - [ ] Setup auth-like system with API key
   - User gets API key from weather API and log-in
 - [ ] Get all cities in Turkey with geographical locations
