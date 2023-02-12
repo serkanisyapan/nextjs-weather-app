@@ -1,10 +1,11 @@
 - [x] Generate Nextjs + Typescript app
 - [x] Setup eslint + airbnb config + prettier
 - [x] Setup tailwind
-- [ ] Setup auth-like system with API key
-  - User gets API key from weather API and log-in
-- [ ] Get all cities in Turkey with geographical locations
+- [x] Get all cities in Turkey with geographical locations
+- [x] User can search provinces
+- [ ] User can see all provinces as a map
 - [ ] Get weather data for city on demand
   - [ ] Data for humidity, wind, probability of rain
-- [ ] User can filter cities
 - [ ] Data visiulization with chartjs
+- [ ] Setup auth-like system with API key
+  - User gets API key from openweathermap and logs in to application
