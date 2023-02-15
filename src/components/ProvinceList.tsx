@@ -1,5 +1,6 @@
-import allTurkeyProvinces from "@/allTurkeyProvinces.json";
+import allTurkeyProvinces from "@/data/allTurkeyProvinces.json";
 import { useState } from "react";
+import { ProvinceItem } from "./ProvinceItem";
 export const ProvincesList = () => {
   const [searchProvinces, setSearchProvince] = useState<string>("");
 
@@ -21,12 +22,13 @@ export const ProvincesList = () => {
       {filteredProvincesLength !== 0 ? (
         <ul className="grid grid-cols-4 gap-2 text-white">
           {filteredProvinces.map((province) => (
-            <li className="border rounded-full w-[220px] h-14 text-lg p-2 px-4 flex justify-center items-center hover:bg-slate-500 cursor-pointer">
-              <span className="bg-fuchsia-900 rounded-full mr-auto w-8 h-8 flex justify-center items-center">
-                {province.id}
-              </span>
-              <span className="mr-auto">{province.name}</span>
-            </li>
+            <ProvinceItem
+              key={province.id}
+              id={province.id}
+              name={province.name}
+              lon={province.longitude}
+              lat={province.latitude}
+            />
           ))}
         </ul>
       ) : (
