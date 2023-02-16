@@ -6,7 +6,7 @@ export const ProvinceMap = () => {
   const router = useRouter();
   return (
     <TurkeyMap
-      customStyle={{ idleColor: "#969090", hoverColor: "#f0ecec" }}
+      customStyle={{ idleColor: "#969090", hoverColor: "#34d399" }}
       showTooltip={true}
       onClick={({ plateNumber, name }) => {
         const { latitude, longitude } = allTurkeyProvines[plateNumber - 1];

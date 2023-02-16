@@ -27,7 +27,7 @@ export const CurrentWeather = ({ name, currentWeather }: CurrentDataTypes) => {
         Feels like {tempFellsLike} °C, {description}
       </span>
       <div className="flex flex-row gap-3">
-        <span>Wind: {currentWeather.wind_speed}</span>
+        <span>Wind: {currentWeather.wind_speed} m/s</span>
         <span>Humidity: {currentWeather.humidity} %</span>
       </div>
     </div>

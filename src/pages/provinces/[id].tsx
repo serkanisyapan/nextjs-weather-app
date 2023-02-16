@@ -2,10 +2,12 @@ import { CurrentWeather } from "@/components/CurrentWeather";
 import { GetServerSideProps } from "next";
 import { WeatherDataTypes } from "@/types/WeatherTypes";
 import { DailyWeather } from "@/components/DailyWeather";
+import { Navbar } from "@/components/Navbar";
 
 export default function ProvinceWeather({ data, name }: WeatherDataTypes) {
   return (
     <>
+      <Navbar name={name} />
       <CurrentWeather name={name} currentWeather={data.current} />
       <DailyWeather dailyWeather={data.daily} />
     </>
