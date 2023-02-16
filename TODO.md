@@ -4,8 +4,8 @@
 - [x] Get all cities in Turkey with geographical locations
 - [x] User can search provinces
 - [x] User can see all provinces as a map
-- [ ] Get weather data for city on demand
-  - [ ] Data for humidity, wind, probability of rain
+- [x] Get weather data for city on demand
+  - [x] Data for humidity, wind, probability of rain
 - [ ] Data visiulization with chartjs
 - [ ] Setup auth-like system with API key
   - User gets API key from openweathermap and logs in to application

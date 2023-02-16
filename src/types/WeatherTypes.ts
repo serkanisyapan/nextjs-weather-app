@@ -1,5 +1,15 @@
-export interface WeatherData {
+export interface WeatherDataTypes {
   data: Weather;
+  name: string;
+}
+
+export interface CurrentDataTypes {
+  name: string;
+  currentWeather: Current;
+}
+
+export interface DailyWeatherTypes {
+  dailyWeather: DailyEntity[];
 }
 
 export interface Weather {
@@ -10,7 +20,7 @@ export interface Weather {
   current: Current;
   minutely?: MinutelyEntity[] | null;
   hourly?: HourlyEntity[] | null;
-  daily?: DailyEntity[] | null;
+  daily: DailyEntity[];
 }
 export interface Current {
   dt: number;
@@ -26,7 +36,8 @@ export interface Current {
   visibility: number;
   wind_speed: number;
   wind_deg: number;
-  weather?: WeatherEntity[] | null;
+  wind_gust: number;
+  weather: WeatherEntity[];
 }
 export interface WeatherEntity {
   id: number;
@@ -69,11 +80,11 @@ export interface DailyEntity {
   wind_speed: number;
   wind_deg: number;
   wind_gust: number;
-  weather?: WeatherEntity[] | null;
+  weather: WeatherEntity[];
   clouds: number;
   pop: number;
-  snow?: number | null;
   uvi: number;
+  rain?: number | null;
 }
 export interface Temp {
   day: number;

@@ -1,9 +1,15 @@
+import { CurrentWeather } from "@/components/CurrentWeather";
 import { GetServerSideProps } from "next";
-import { WeatherData } from "@/types/WeatherTypes";
+import { WeatherDataTypes } from "@/types/WeatherTypes";
+import { DailyWeather } from "@/components/DailyWeather";
 
-export default function ProvinceWeather({ data }: WeatherData) {
-  console.log(data);
-  return <h1 className="text-xl text-yellow-500">Hello World!</h1>;
+export default function ProvinceWeather({ data, name }: WeatherDataTypes) {
+  return (
+    <>
+      <CurrentWeather name={name} currentWeather={data.current} />
+      <DailyWeather dailyWeather={data.daily} />
+    </>
+  );
 }
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
@@ -13,6 +19,6 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   );
   const data = await response.json();
   return {
-    props: { data },
+    props: { data, name },
   };
 };
