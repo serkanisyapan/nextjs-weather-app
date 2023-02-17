@@ -3,7 +3,7 @@ import { getWeatherDay } from "@/utils/getCurrentDate";
 
 export const DailyWeather = ({ dailyWeather }: DailyWeatherTypes) => {
   return (
-    <div className="flex flex-row gap-8 justify-center mt-10">
+    <div className="flex flex-row gap-8 mt-20 justify-evenly">
       {dailyWeather.map((daily, dailyID) => (
         <div className="text-white text-center" key={dailyID}>
           <span>{getWeatherDay(daily.dt)}</span>

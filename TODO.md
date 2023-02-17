@@ -6,6 +6,6 @@
 - [x] User can see all provinces as a map
 - [x] Get weather data for city on demand
   - [x] Data for humidity, wind, probability of rain
-- [ ] Data visiulization with chartjs
+- [x] Data visiulization with chartjs
 - [ ] Setup auth-like system with API key
   - User gets API key from openweathermap and logs in to application

@@ -1,7 +1,7 @@
 import { GetServerSideProps } from "next";
 import { CurrentWeather } from "@/components/CurrentWeather";
 import { WeatherDataTypes } from "@/types/WeatherTypes";
-import { HourlyWeather } from "@/components/HourlyWeather";
+import { HourlyWeather } from "@/components/HourlyWeatherChart";
 import { DailyWeather } from "@/components/DailyWeather";
 import { Navbar } from "@/components/Navbar";
 
@@ -9,10 +9,14 @@ export default function ProvinceWeather({ data, name }: WeatherDataTypes) {
   console.log(data);
   return (
     <>
-      <Navbar name={name} />
-      <CurrentWeather name={name} currentWeather={data.current} />
-      <HourlyWeather hourlyWeather={data.hourly} />
-      <DailyWeather dailyWeather={data.daily} />
+      <div className="w-4/5 m-auto">
+        <Navbar name={name} />
+        <div className="flex flex-row mt-8 justify-around">
+          <CurrentWeather name={name} currentWeather={data.current} />
+          <HourlyWeather hourlyWeather={data.hourly} />
+        </div>
+        <DailyWeather dailyWeather={data.daily} />
+      </div>
     </>
   );
 }

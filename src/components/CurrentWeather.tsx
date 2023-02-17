@@ -11,7 +11,7 @@ export const CurrentWeather = ({ name, currentWeather }: CurrentDataTypes) => {
   );
 
   return (
-    <div className="flex flex-col mt-5 text-white text-lg w-[350px] m-auto gap-3 p-2 rounded">
+    <div className="flex flex-col text-white text-lg w-[350px] gap-3">
       <span>{currentDate}</span>
       <span>{name}, TR</span>
       <div className="flex gap-2 items-center ">

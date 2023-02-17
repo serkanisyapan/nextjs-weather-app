@@ -22,3 +22,18 @@ export const getWeatherDay = (daytime: number) => {
   });
   return dayName;
 };
+
+export const getWeatherTime = (daytime: number) => {
+  const dayTime = new Date(daytime * 1000).toLocaleTimeString("en", {
+    hour: "numeric",
+  });
+  return dayTime;
+};
+
+export const chartDate = (daytime: number) => {
+  const dayName = new Date(daytime * 1000).toLocaleDateString("en", {
+    month: "short",
+    day: "numeric",
+  });
+  return dayName;
+};
