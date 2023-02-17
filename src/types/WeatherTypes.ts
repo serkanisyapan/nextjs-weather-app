@@ -12,14 +12,18 @@ export interface DailyWeatherTypes {
   dailyWeather: DailyEntity[];
 }
 
+export interface HourlyWeatherTypes {
+  hourlyWeather: HourlyEntity[];
+}
+
 export interface Weather {
   lat: number;
   lon: number;
   timezone: string;
   timezone_offset: number;
   current: Current;
-  minutely?: MinutelyEntity[] | null;
-  hourly?: HourlyEntity[] | null;
+  minutely: MinutelyEntity[];
+  hourly: HourlyEntity[];
   daily: DailyEntity[];
 }
 export interface Current {
@@ -62,7 +66,7 @@ export interface HourlyEntity {
   wind_speed: number;
   wind_deg: number;
   wind_gust: number;
-  weather?: WeatherEntity[] | null;
+  weather: WeatherEntity[];
   pop: number;
 }
 export interface DailyEntity {

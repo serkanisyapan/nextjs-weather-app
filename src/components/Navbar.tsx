@@ -13,20 +13,20 @@ const ArrowIcon = () => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+      <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
       <g
         id="SVGRepo_tracerCarrier"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       ></g>
       <g id="SVGRepo_iconCarrier">
         {" "}
         <path
           d="M4 12L20 12M4 12L10 6M4 12L10 18"
           stroke="#ffffff"
-          stroke-width="1.5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         ></path>{" "}
       </g>
     </svg>

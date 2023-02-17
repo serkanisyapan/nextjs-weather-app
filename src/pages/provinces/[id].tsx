@@ -1,14 +1,17 @@
-import { CurrentWeather } from "@/components/CurrentWeather";
 import { GetServerSideProps } from "next";
+import { CurrentWeather } from "@/components/CurrentWeather";
 import { WeatherDataTypes } from "@/types/WeatherTypes";
+import { HourlyWeather } from "@/components/HourlyWeather";
 import { DailyWeather } from "@/components/DailyWeather";
 import { Navbar } from "@/components/Navbar";
 
 export default function ProvinceWeather({ data, name }: WeatherDataTypes) {
+  console.log(data);
   return (
     <>
       <Navbar name={name} />
       <CurrentWeather name={name} currentWeather={data.current} />
+      <HourlyWeather hourlyWeather={data.hourly} />
       <DailyWeather dailyWeather={data.daily} />
     </>
   );
