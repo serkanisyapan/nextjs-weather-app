@@ -4,11 +4,11 @@ import { WeatherDataTypes } from "@/types/WeatherTypes";
 import { HourlyWeather } from "@/components/HourlyWeatherChart";
 import { DailyWeather } from "@/components/DailyWeather";
 import { Navbar } from "@/components/Navbar";
+import { Layout } from "@/components/Layout";
 
 export default function ProvinceWeather({ data, name }: WeatherDataTypes) {
-  console.log(data);
   return (
-    <>
+    <Layout title={name}>
       <div className="w-4/5 m-auto">
         <Navbar name={name} />
         <div className="flex flex-row mt-8 justify-around">
@@ -17,7 +17,7 @@ export default function ProvinceWeather({ data, name }: WeatherDataTypes) {
         </div>
         <DailyWeather dailyWeather={data.daily} />
       </div>
-    </>
+    </Layout>
   );
 }
 
