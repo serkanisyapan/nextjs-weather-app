@@ -6,6 +6,7 @@ export const CurrentWeather = ({ name, currentWeather }: CurrentDataTypes) => {
   const currentDate = getCurrentDate();
   const weatherTemp = Math.floor(currentWeather.temp);
   const tempFellsLike = Math.floor(currentWeather.feels_like);
+  const windSpeed = Math.floor(currentWeather.wind_speed * 3.6);
   const description = getUpperCaseDescription(
     currentWeather.weather[0].description
   );
@@ -27,7 +28,7 @@ export const CurrentWeather = ({ name, currentWeather }: CurrentDataTypes) => {
         Feels like {tempFellsLike} °C, {description}
       </span>
       <div className="flex flex-row gap-3">
-        <span>Wind: {currentWeather.wind_speed} m/s</span>
+        <span>Wind: {windSpeed} km/h</span>
         <span>Humidity: {currentWeather.humidity} %</span>
       </div>
     </div>
