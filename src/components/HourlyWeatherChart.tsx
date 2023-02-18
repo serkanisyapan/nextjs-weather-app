@@ -7,6 +7,7 @@ import {
   Title,
   CategoryScale,
   Tooltip,
+  Filler,
 } from "chart.js";
 import { HourlyWeatherTypes, HourlyEntity } from "@/types/WeatherTypes";
 import { getWeatherTime, chartDate } from "@/utils/getCurrentDate";
@@ -18,7 +19,8 @@ ChartJS.register(
   LinearScale,
   Title,
   CategoryScale,
-  Tooltip
+  Tooltip,
+  Filler
 );
 
 export const HourlyWeather = ({ hourlyWeather }: HourlyWeatherTypes) => {
@@ -37,6 +39,11 @@ export const HourlyWeather = ({ hourlyWeather }: HourlyWeatherTypes) => {
               data: threeHourWeahter.map((hourly) => Math.floor(hourly.temp)),
               borderColor: "#34d399",
               backgroundColor: "#34d399",
+              fill: {
+                target: "origin",
+                below: "#34d39921",
+                above: "#34d39921",
+              },
               yAxisID: "temp",
             },
           ],
@@ -91,10 +98,13 @@ export const HourlyWeather = ({ hourlyWeather }: HourlyWeatherTypes) => {
                 afterBody: (context) => {
                   const getWeatherData: HourlyEntity =
                     threeHourWeahter[context[0].dataIndex];
+                  const windSpeedKM = Math.floor(
+                    getWeatherData.wind_speed * 3.6
+                  );
                   const tooltipLabel =
                     `feels_like:  ${Math.floor(getWeatherData.feels_like)}°C` +
                     "\n" +
-                    `wind_speed:  ${getWeatherData.wind_speed}m/s` +
+                    `wind_speed:  ${windSpeedKM}km/h` +
                     "\n" +
                     `humidity:  ${getWeatherData.humidity}%` +
                     "\n" +
