@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ProvinceSelectBox } from "./ProvinceSelectBox";
 
 interface Props {
   name: string;
@@ -42,7 +43,7 @@ export const Navbar = ({ name }: Props) => {
           Back to All Provinces
         </span>
       </Link>
-      <span className="text-2xl">{name}</span>
+      <ProvinceSelectBox provinceName={name} />
     </nav>
   );
 };
