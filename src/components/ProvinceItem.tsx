@@ -14,7 +14,7 @@ export const ProvinceItem = ({ id, name, lon, lat }: Props) => {
         query: { name, lon, lat },
       }}
     >
-      <li className="border rounded-full w-[220px] h-14 text-lg p-2 px-4 flex justify-center items-center hover:bg-slate-500 cursor-pointer">
+      <li className="w-full h-14 text-lg p-2 px-4 flex justify-center items-center hover:bg-slate-500 cursor-pointer">
         <span className="bg-emerald-400 rounded-full mr-auto w-8 h-8 flex justify-center items-center text-black font-bold">
           {id}
         </span>

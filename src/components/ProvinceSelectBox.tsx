@@ -30,7 +30,7 @@ export const ProvinceSelectBox = ({ provinceName }: Props) => {
     <select
       onChange={(event) => setGotoProvince(event.target.value)}
       defaultValue={provinceName}
-      className="bg-gray-700 text-white text-lg cursor-pointer"
+      className="bg-gray-700 text-white text-lg cursor-pointer scrollbar-thin scrollbar-thumb-emerald-400"
     >
       {allTurkeyProvinces.map((province) => (
         <option key={province.id} value={province.name}>
