@@ -3,14 +3,13 @@ import { useState } from "react";
 import { ProvinceItem } from "./ProvinceItem";
 export const ProvincesList = () => {
   const [searchProvinces, setSearchProvince] = useState<string>("");
-  const [showProvinceList, setShowProvinceList] = useState(false);
+  const [showProvinceList, setShowProvinceList] = useState<Boolean>(false);
 
   const filteredProvinces = allTurkeyProvinces.filter((province) => {
-    const provinceName = province.name.toLowerCase();
-    return provinceName.includes(searchProvinces.toLowerCase());
+    const provinceNameLowerCase = province.name.toLocaleLowerCase("tr");
+    const searchLowerCase = searchProvinces.toLocaleLowerCase("tr");
+    return provinceNameLowerCase.includes(searchLowerCase);
   });
-
-  const filteredProvincesLength = filteredProvinces.length;
 
   return (
     <>
@@ -23,11 +22,11 @@ export const ProvincesList = () => {
         onBlur={() =>
           setTimeout(() => {
             setShowProvinceList(false);
-          }, 100)
+          }, 150)
         }
       />
       {showProvinceList && (
-        <ul className="text-white rounded-md max-h-80 overflow-y-scroll bg-gray-600 scrollbar-thin scrollbar-thumb-emerald-400">
+        <ul className="text-white rounded-md max-h-64 overflow-y-scroll scrollbar-thin scrollbar-thumb-emerald-400">
           {filteredProvinces.map((province) => (
             <ProvinceItem
               key={province.id}

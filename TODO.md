@@ -7,5 +7,5 @@
 - [x] Get weather data for city on demand
   - [x] Data for humidity, wind, probability of rain
 - [x] Data visiulization with chartjs
-- [ ] Setup auth-like system with API key
+- [x] Setup auth-like system with API key
   - User gets API key from openweathermap and logs in to application
