@@ -39,6 +39,7 @@ export const HourlyWeather = ({ hourlyWeather }: HourlyWeatherTypes) => {
               data: threeHourWeahter.map((hourly) => Math.floor(hourly.temp)),
               borderColor: "#34d399",
               backgroundColor: "#34d399",
+              tension: 0.3,
               fill: {
                 target: "origin",
                 below: "#34d39921",
@@ -114,7 +115,6 @@ export const HourlyWeather = ({ hourlyWeather }: HourlyWeatherTypes) => {
               },
             },
           },
-          tension: 0.3,
         }}
       />
     </div>
