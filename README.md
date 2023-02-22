@@ -1,4 +1,4 @@
-## Weather App made with Next.js
+## Weather App for Turkey provinces made with Next.js 13
 
 ### Getting Started
 
