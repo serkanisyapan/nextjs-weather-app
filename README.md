@@ -1,4 +1,9 @@
 ## Weather App for Turkey provinces made with Next.js 13
+### Stack:
+- Nextjs 13
+- ReactJS
+- Typescript
+- TailwindCSS
 
 ### Getting Started
 
