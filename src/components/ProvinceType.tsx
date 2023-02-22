@@ -9,9 +9,9 @@ const showProvinceTypes = [
 ];
 
 export const ProvinceType = ({ handleProvince, showProvinces }: Props) => {
-  const provinceTypeStyle = "rounded-full bg-slate-400 p-2";
+  const provinceTypeStyle = "bg-slate-400 rounded- p-2";
   return (
-    <div className="border text-white m-auto flex justify-evenly items-center rounded-full w-[250px] h-12 cursor-pointer mb-10">
+    <div className="text-white m-auto flex justify-evenly items-center w-[300px] h-12 cursor-pointer mb-10">
       {showProvinceTypes.map((province, provinceID) => (
         <span
           key={provinceID}
