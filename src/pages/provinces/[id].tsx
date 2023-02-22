@@ -9,9 +9,9 @@ import { Layout } from "@/components/Layout";
 export default function ProvinceWeather({ data, name }: WeatherDataTypes) {
   return (
     <Layout title={name}>
-      <div className="w-4/5 m-auto">
+      <div className="m-auto md:w-4/5">
         <Navbar name={name} />
-        <div className="flex flex-row mt-8 justify-around">
+        <div className="flex flex-col mt-8 justify-center md:flex-row md:justify-around">
           <CurrentWeather name={name} currentWeather={data.current} />
           <HourlyWeather hourlyWeather={data.hourly} />
         </div>

@@ -27,7 +27,7 @@ export const HourlyWeather = ({ hourlyWeather }: HourlyWeatherTypes) => {
   const threeHourWeahter = getThreeHourWeather(hourlyWeather);
 
   return (
-    <div className="h-auto w-[650px]">
+    <div className="h-auto w-[350px] md:w-[650px]">
       <Line
         data={{
           labels: threeHourWeahter.map(
@@ -51,6 +51,7 @@ export const HourlyWeather = ({ hourlyWeather }: HourlyWeatherTypes) => {
         }}
         options={{
           maintainAspectRatio: false,
+          responsive: true,
           scales: {
             x: {
               grid: {
