@@ -7,7 +7,7 @@ export default (req: NextApiRequest, res: NextApiResponse) => {
     cookie.serialize("open_weather_api_key", req.body.token, {
       httpOnly: true,
       secure: process.env.NODE_ENV !== "development",
-      maxAge: 60 * 60,
+      maxAge: 60 * 60 * 8,
       sameSite: "strict",
       path: "/",
     })

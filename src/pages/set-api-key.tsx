@@ -5,7 +5,7 @@ import { ArrowIcon } from "@/components/ArrowIcon";
 
 export default function WeatherApi() {
   const [apiKey, setApiKey] = useState("");
-  const [apiError, setApiError] = useState("");
+  const [apiType, setApiType] = useState("");
   const router = useRouter();
 
   const testApiKey = async (event: React.FormEvent) => {
@@ -15,11 +15,12 @@ export default function WeatherApi() {
     );
     const apiResponse = await sendApiRequest.json();
     if (apiResponse.cod === 401) {
-      setApiError("Invalid Api Key, Try again.");
+      setApiType("error");
       setTimeout(() => {
-        setApiError("");
+        setApiType("");
       }, 1500);
     } else {
+      setApiType("success");
       await fetch("/api/getapikey", {
         method: "post",
         headers: {
@@ -34,9 +35,15 @@ export default function WeatherApi() {
   return (
     <Layout title="API Key">
       <div className="flex flex-col gap-3 h-screen justify-center items-center">
-        {apiError && (
-          <p className=" bg-red-500 text-white p-2 rounded-md mr-10">
-            {apiError}
+        {apiType && (
+          <p
+            className={`text-white p-2 rounded-md mr-10 ${
+              apiType === "error" ? "bg-red-500" : "bg-green-500"
+            }`}
+          >
+            {apiType === "error"
+              ? "Invalid Api Key, Try Again."
+              : "Valid Api Key, Redirecting..."}
           </p>
         )}
         <label className="text-white text-lg hidden">Your API Key: </label>
@@ -63,6 +70,14 @@ export default function WeatherApi() {
           <br />
           and get an api key.
         </p>
+        <div className="group flex justify-center items-center flex-col mr-7">
+          <span className="bg-slate-500 rounded-full mr-3 text-white w-5 h-5 flex justify-center items-center">
+            ?
+          </span>
+          <span className="opacity-0 text-white bg-slate-500 mt-2 group-hover:opacity-100 p-1 border-white rounded-sm">
+            e54adaf85c1ebc454d16a41b46cea4ec
+          </span>
+        </div>
       </div>
     </Layout>
   );
