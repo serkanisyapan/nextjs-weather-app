@@ -4,7 +4,7 @@ import { WeatherIconSvg } from "./WeatherIconSvg";
 
 export const DailyWeather = ({ dailyWeather }: DailyWeatherTypes) => {
   return (
-    <div className="grid grid-cols-3 md:grid-cols-8 mt-[60px]">
+    <div className="grid text-lg grid-cols-3 md:grid-cols-8 mt-[60px]">
       {dailyWeather.map((daily, dailyID) => (
         <div
           className="text-white flex flex-col justify-center items-center mb-3"
