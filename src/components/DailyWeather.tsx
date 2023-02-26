@@ -1,5 +1,6 @@
 import { DailyWeatherTypes } from "@/types/WeatherTypes";
 import { getWeatherDay } from "@/utils/getCurrentDate";
+import { WeatherIconSvg } from "./WeatherIconSvg";
 
 export const DailyWeather = ({ dailyWeather }: DailyWeatherTypes) => {
   return (
@@ -10,10 +11,7 @@ export const DailyWeather = ({ dailyWeather }: DailyWeatherTypes) => {
           key={dailyID}
         >
           <span>{getWeatherDay(daily.dt)}</span>
-          <img
-            className="w-[100px] h-[100]"
-            src={`https://openweathermap.org/img/wn/${daily.weather[0].icon}@2x.png`}
-          />
+          <WeatherIconSvg icon={daily.weather[0].icon} />
           <span>
             {Math.floor(daily.temp.max)}°C{" "}
             <span className="opacity-70">{Math.floor(daily.temp.min)}°C</span>

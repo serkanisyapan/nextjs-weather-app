@@ -1,6 +1,7 @@
 import { getCurrentDate } from "@/utils/getCurrentDate";
 import { CurrentDataTypes } from "@/types/WeatherTypes";
 import { getUpperCaseDescription } from "@/utils/getUpperCaseDescriptions";
+import { WeatherIconSvg } from "./WeatherIconSvg";
 
 export const CurrentWeather = ({ name, currentWeather }: CurrentDataTypes) => {
   const currentDate = getCurrentDate();
@@ -17,10 +18,7 @@ export const CurrentWeather = ({ name, currentWeather }: CurrentDataTypes) => {
       <span>{name}, TR</span>
       <div className="flex gap-2 items-center ">
         <span>
-          <img
-            className="w-20 h-20"
-            src={`https://openweathermap.org/img/wn/${currentWeather.weather[0].icon}@2x.png`}
-          />
+          <WeatherIconSvg icon={currentWeather.weather[0].icon} />
         </span>
         <span className="text-2xl">{weatherTemp} °C</span>
       </div>
