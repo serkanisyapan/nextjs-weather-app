@@ -23,7 +23,17 @@ export default function ProvinceWeather({ data, name }: WeatherDataTypes) {
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { name, lat, lon } = context.query;
+
   const userApiKey = context.req.cookies.open_weather_api_key;
+  if(!userApiKey) {
+    return {
+      redirect: {
+        permanent: false,
+        destination: '/set-api-key'
+      }
+    }
+  }
+
   const response = await fetch(
     `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&units=metric&appid=${userApiKey}`
   );
@@ -32,3 +42,5 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     props: { data, name },
   };
 };
+
+// 'Droid Sans Mono', 'monospace', monospace
