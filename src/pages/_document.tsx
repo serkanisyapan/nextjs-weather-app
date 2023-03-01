@@ -3,7 +3,7 @@ import { Html, Head, Main, NextScript } from "next/document";
 export default function Document() {
   return (
     <Html
-      className="bg-gray-700 font-mono scrollbar-thin scrollbar-thumb-emerald-400"
+      className="bg-gray-700 font-mono scrollbar-thin scrollbar-thumb-emerald-400 h-full w-full"
       lang="en"
     >
       <Head />
